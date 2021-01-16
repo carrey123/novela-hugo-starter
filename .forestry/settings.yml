@@ -4,8 +4,13 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: heading
-  label: Content
+- type: directory
+  path: ''
+  label: Sanat
+  create: all
+  match: "**/*"
+  templates:
+  - post
 - type: document
   path: content/_index.md
   label: Anasayfa
@@ -17,7 +22,7 @@ sections:
   templates:
   - post
 - type: heading
-  label: Data
+  label: Content
 - type: directory
   path: content/authors
   label: Authors
@@ -25,6 +30,8 @@ sections:
   match: "**/_index.md"
   templates:
   - author
+- type: heading
+  label: Data
 - type: directory
   path: config/_default
   label: Config
